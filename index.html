@@ -1,7 +1,109 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>幻境伺服器 Dreamland</title>
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background-color: #525252;
+        opacity: 0; /* Initially set the opacity to 0 */
+        transition: opacity 1s;
+      }
+
+      h1 {
+        color: #ffffff;
+      }
+
+      img {
+        border-radius: 75px;
+      }
+
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 50px;
+        text-align: center;
+        color: white;
+      }
+
+      .fade-in {
+        opacity: 1; /* Set the opacity to 1 to fade in */
+      }
+
+      .copy-button {
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        font-size: 20px;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+
+      .copy-button:hover {
+        opacity: 0.8;
+      }
+
+      #copyPopup {
+        display: none; /* Initially hide the copied pop-up */
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        animation: fadeOut 3s;
+      }
+
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fades in the body content
+        document.body.classList.add("fade-in");
+
+        // Copies the connection address to clipboard and shows the copied pop-up
+        var copyButton = document.getElementById("copyButton");
+        var connectionAddress = document.getElementById("connectionAddress");
+
+        copyButton.addEventListener("click", function () {
+          navigator.clipboard.writeText(connectionAddress.textContent);
+          var copyPopup = document.getElementById("copyPopup");
+          copyPopup.style.display = "block";
+          setTimeout(function () {
+            copyPopup.style.display = "none";
+          }, 3000);
+        });
+      });
+    </script>
+  </head>
   <body>
-    <h1>The website is being Construction</h1>
-    <p>This will construct soon...</p>
+    <div class="container">
+      <div id="copyPopup">已複製</div>
+      <img src="./images/logo.png" alt="幻境伺服器 Dreamland" style="width: 30%;">
+      <h1>
+        連線位置:
+        <span id="connectionAddress">dreamland-mc.net</span>
+        <button id="copyButton" class="copy-button">複製</button>
+      </h1>
+      <h1>版本: 1.20.4</h1>
+    </div>
   </body>
 </html>
