@@ -9,7 +9,7 @@
 
       body {
         background-color: #525252;
-        opacity: 0; /* Initially set the opacity to 0 */
+        opacity: 0;
         transition: opacity 1s;
       }
 
@@ -30,7 +30,7 @@
       }
 
       .fade-in {
-        opacity: 1; /* Set the opacity to 1 to fade in */
+        opacity: 1;
       }
 
       .copy-button {
@@ -50,7 +50,7 @@
       }
 
       #copyPopup {
-        display: none; /* Initially hide the copied pop-up */
+        display: none;
         position: absolute;
         top: 10%;
         left: 50%;
@@ -76,10 +76,8 @@
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Fades in the body content
         document.body.classList.add("fade-in");
 
-        // Copies the connection address to clipboard and shows the copied pop-up
         var copyButton = document.getElementById("copyButton");
         var connectionAddress = document.getElementById("connectionAddress");
 
@@ -100,7 +98,7 @@
       <img src="./images/logo.png" alt="幻境伺服器 Dreamland" style="width: 30%;">
       <h1>
         連線位置:
-        <span id="connectionAddress">dreamland-mc.net</span>
+        <span id="connectionAddress">play.dreamland-mc.net</span>
         <button id="copyButton" class="copy-button">複製</button>
       </h1>
       <h1>版本: 1.20.4</h1>
